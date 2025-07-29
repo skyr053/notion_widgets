@@ -25,13 +25,16 @@
       --input-text: #3B3B3B;
     }
 
+    /* DARK MODE */
     @media (prefers-color-scheme: dark) {
-      :root {
-        --text-color: #68FC69;
-        --border-color: #FA2F68;
-        --placeholder-color: #FFEB51;
-        --input-bg: transparent;
-        --input-text: #68F8FC;
+      input, textarea {
+        color: #ffffff;
+        border-bottom: 1px solid #888;
+      }
+    
+      input::placeholder,
+      textarea::placeholder {
+        color: #888888; /* Más tenue en modo oscuro */
       }
     }
 
