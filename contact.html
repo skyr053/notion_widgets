@@ -8,8 +8,11 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* Evita scroll vertical y horizontal */
       background: transparent;
       font-family: 'Poppins', sans-serif;
       color: #fff;
@@ -20,9 +23,10 @@
       border-radius: 15px;
       padding: 20px;
       max-width: 500px;
-      margin: 0 auto;
+      margin: auto;
       background: #fff;
       color: #3B3B3B;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 
     .screen-body {
