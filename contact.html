@@ -148,17 +148,20 @@
           ¿Tienes preguntas, ideas o interés en colaborar con nosotros? Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.
         </p>
       </div>
-      <div class="app-form">
+
+      <!-- ✅ Formulario que envía a tu correo con Formspree -->
+      <form action="https://formspree.io/f/xblkynly" method="POST" class="app-form">
         <div class="app-form-group">
-          <input class="app-form-control" placeholder="EMAIL" type="email">
+          <input class="app-form-control" placeholder="EMAIL" type="email" name="email" required>
         </div>
         <div class="app-form-group message">
-          <textarea class="app-form-control" placeholder="MENSAJE" rows="3"></textarea>
+          <textarea class="app-form-control" placeholder="MENSAJE" rows="3" name="message" required></textarea>
         </div>
         <div class="app-form-group buttons" style="text-align: right;">
           <button class="app-form-button" type="submit">ENVIAR</button>
         </div>
-      </div>
+      </form>
+
     </div>
   </div>
 </body>
