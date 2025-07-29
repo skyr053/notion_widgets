@@ -14,7 +14,6 @@
       margin: 0;
       padding: 0;
       overflow-x: hidden;
-      overflow-y: hidden;
       width: 100vw;
       height: 100vh;
     }
@@ -25,11 +24,10 @@
       justify-content: center;
       gap: 20px;
       flex-wrap: nowrap; /* una fila en PC */
-      margin: 20px 10px; /* margenes reducidos para no provocar overflow */
+      margin: 20px 10px;
       padding: 10px 0;
       max-width: 100vw;
       overflow-x: hidden;
-      overflow-y: hidden;
     }
 
     .image-column {
@@ -50,28 +48,38 @@
       transform: scale(1.05);
     }
 
-    /* Responsive móvil */
+    /* Cuando la ventana es menor o igual a 900px */
+    @media (max-width: 900px) {
+      .image-row {
+        flex-wrap: wrap; /* permite que baje la tercera imagen */
+        justify-content: flex-start;
+        gap: 10px;
+        margin: 10px 5px;
+        padding: 10px 5px;
+      }
+      .image-column {
+        flex: 1 1 48%;
+        max-width: 48%;
+        height: 180px;
+        margin: 0;
+      }
+    }
+
+    /* Ajustes para móvil menor de 600px (igual que para 900px) */
     @media (max-width: 600px) {
-  .image-row {
-    flex-wrap: wrap; /* varias filas */
-    gap: 10px;
-    justify-content: flex-start; /* para evitar espacios extra */
-    margin: 10px 5px;
-    padding: 10px 5px;
-    overflow-x: hidden;
-  }
-  .image-column {
-    flex: 1 1 48%; /* dos por fila */
-    max-width: 48%;
-    height: 180px;
-  }
-  .image-column:last-child {
-    flex: 1 1 100% !important;  /* ocupa toda la fila */
-    max-width: 100% !important;
-    height: 180px;
-    margin: 0; /* quitar margin para que no se salga */
-  }
-}
+      .image-row {
+        gap: 10px;
+        justify-content: flex-start;
+        margin: 10px 5px;
+        padding: 10px 5px;
+      }
+      .image-column {
+        flex: 1 1 48%;
+        max-width: 48%;
+        height: 180px;
+        margin: 0;
+      }
+    }
   </style>
 </head>
 <body>
