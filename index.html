@@ -82,27 +82,32 @@ body {
     @media (max-width: 600px) { /* telefono */
   .image-row {
     flex-wrap: wrap;
-    justify-content: center;  
-    gap: 15px;
+    justify-content: center;
+    gap: 10px;
     margin: 10px 5px;
     padding: 10px 5px;
-    max-width: 100%; /* aseguramos que use todo el ancho disponible */
+    max-width: 100%;
   }
 
   .image-column {
-    flex: 0 0 48%;
-    max-width: 48%;
-    height: 180px;
+    flex: 0 0 45%;      /* ancho un poco menor que 50% para que quepan dos */
+    max-width: 45%;
+    height: 140px;      /* altura reducida */
     margin: 0;
   }
 
-  /* Centrar la tercera imagen en segunda fila con mismo tamaño */
   .image-column:nth-child(3) {
+    flex-basis: 45%;
+    max-width: 45%;
+    height: 140px;
     margin-left: auto;
-    margin-right: auto;
-    flex-basis: 48%;
-    max-width: 48%;
-    height: 180px; /* igual altura que las otras */
+    margin-right: auto; /* centra la tercera imagen */
+  }
+
+  .image-column img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
   }
 }
   </style>
