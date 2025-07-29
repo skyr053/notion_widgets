@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Slider Hidrológico</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%; /* ocupa todo el ancho */
+      height: 150px; /* altura fija */
+      overflow: hidden;
+      background: #000; /* evita bordes blancos */
+      display: flex;
+    }
+
+    .slide {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .slide.active {
+      display: flex;
+      align-items: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.65); /* opacidad 65% */
+      z-index: 1;
+    }
+
+    .text-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: left;
+      padding-left: 50px;
+      width: 100%;
+      box-sizing: border-box;
+      word-wrap: break-word;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    .text-content h2 {
+      font-weight: bold;
+      margin: 0 0 5px 0;
+      font-size: 1.2rem;
+    }
+
+    .text-content p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ddd;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      user-select: none;
+      z-index: 3;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: #bbb;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    /* ---- Responsive ajustes para celulares ---- */
+    @media (max-width: 600px) {
+      .slider {
+        height: 120px; /* un poco menos alto en móviles */
+      }
+
+      .text-content h2 {
+        font-size: 1rem; /* título más pequeño */
+      }
+
+      .text-content p {
+        font-size: 0.85rem; /* subtítulo más pequeño */
+      }
+
+      .prev, .next {
+        font-size: 16px; /* botones un poco más chicos */
+        width: 30px;
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider">
+    <div class="slide active" style="background-image: url('https://i.imgur.com/7jCYnNr.png'); background-position: center 65%;"> 
+      <div class="overlay"></div>
+      <div class="text-content">
+        <h2>CAMBIO CLIMÁTICO</h2>
+        <p>Evaluación del impacto climático en los recursos hídricos para adaptación y resiliencia</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('https://i.imgur.com/gHpOP2K.png'); background-position: left 40%;">
+      <div class="overlay"></div>
+      <div class="text-content">
+        <h2>MODELACIÓN NUMÉRICA</h2>
+        <p>Simulaciones hidrológicas y atmosféricas enfocadas en la gestión del recurso hídrico</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('https://i.imgur.com/ITIgVSL.png'); background-position: center 70%;">
+      <div class="overlay"></div>
+      <div class="text-content">
+        <h2>HIDROGEOLOGÍA</h2>
+        <p>Estudios avanzados del flujo subterráneo y manejo de acuíferos para una gestión sostenible del agua</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('https://i.imgur.com/9uQZRGg.png'); background-position: center 5%;">
+      <div class="overlay"></div>
+      <div class="text-content">
+        <h2>MONITOREO Y PRONÓSTICO HIDROLÓGICO</h2>
+        <p>Implementación de tecnologías avanzadas para la predicción y monitoreo de condiciones hidrológicas</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('https://i.imgur.com/60acIbH.jpeg'); background-position: center 50%;">
+      <div class="overlay"></div>
+      <div class="text-content">
+        <h2>ANÁLISIS DE EVENTOS EXTREMOS</h2>
+        <p>Evaluación del riesgo y frecuencia de eventos hidrológicos extremos para la preparación y mitigación de desastres</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('https://i.imgur.com/ouXjS7i.jpeg'); background-position: center 30%;">
+      <div class="overlay"></div>
+      <div class="text-content">
+        <h2>HIDROLOGÍA SUPERFICIAL</h2>
+        <p>Análisis y modelado de sistemas fluviales para mejorar la gestión de recursos y la planificación de cuencas</p>
+      </div>
+    </div>
+
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+    let timer;
+
+    function showSlide(i) {
+      slides[index].classList.remove('active');
+      index = (index + i + slides.length) % slides.length;
+      slides[index].classList.add('active');
+    }
+
+    function moveSlide(n) {
+      showSlide(n);
+      resetTimer();
+    }
+    
+    function autoSlide() {
+      showSlide(1);
+    }
+    
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(autoSlide, 5000);
+    }
+
+    timer = setInterval(autoSlide, 5000);
+  </script>
+
+</body>
+</html>
