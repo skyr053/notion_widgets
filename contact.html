@@ -25,16 +25,13 @@
       --input-text: #3B3B3B;
     }
 
-    /* DARK MODE */
     @media (prefers-color-scheme: dark) {
-      input, textarea {
-        color: #FFEB51;
-        border-bottom: 1px solid #FFEB51;
-      }
-    
-      input::placeholder,
-      textarea::placeholder {
-        color: #FFEB51; /* Más tenue en modo oscuro */
+      :root {
+        --text-color: #68FC69;
+        --border-color: #FA2F68;
+        --placeholder-color: #FFEB51;
+        --input-bg: transparent;
+        --input-text: #68F8FC;
       }
     }
 
@@ -169,4 +166,10 @@
           <textarea class="app-form-control" placeholder="MENSAJE" rows="3"></textarea>
         </div>
         <div class="app-form-group buttons" style="text-align: right;">
-          <button class="app-form-button" type="submi
+          <button class="app-form-button" type="submit">ENVIAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
