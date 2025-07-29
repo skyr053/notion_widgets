@@ -78,6 +78,33 @@ body {
     height: 180px; /* igual altura que las otras */
   }
 }
+
+    @media (max-width: 600px) { /* telefono */
+  .image-row {
+    flex-wrap: wrap;
+    justify-content: center;  
+    gap: 15px;
+    margin: 10px 5px;
+    padding: 10px 5px;
+    max-width: 100%; /* aseguramos que use todo el ancho disponible */
+  }
+
+  .image-column {
+    flex: 0 0 48%;
+    max-width: 48%;
+    height: 180px;
+    margin: 0;
+  }
+
+  /* Centrar la tercera imagen en segunda fila con mismo tamaño */
+  .image-column:nth-child(3) {
+    margin-left: auto;
+    margin-right: auto;
+    flex-basis: 48%;
+    max-width: 48%;
+    height: 180px; /* igual altura que las otras */
+  }
+}
   </style>
 </head>
 <body>
