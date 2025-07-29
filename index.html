@@ -53,4 +53,63 @@
     /* Ventanas medianas: reordena 2 arriba, 1 abajo centrada */
     @media (max-width: 900px) {
       .image-row {
-        flex-wrap: wrap; /* permite que baje la tercera imagen *
+        flex-wrap: wrap; /* permite que baje la tercera imagen */
+        justify-content: center; /* centramos todo */
+        gap: 20px;
+        margin: 10px 5px;
+        padding: 10px 5px;
+      }
+      .image-column {
+        flex: 0 0 48%;  /* ancho igual para todas */
+        height: 180px;
+        margin: 0 auto;
+      }
+      /* Para que la tercera imagen esté centrada en la segunda fila */
+      .image-column:nth-child(3) {
+        flex-basis: 48%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    /* Móvil (igual que ventana mediana) */
+    @media (max-width: 600px) {
+      .image-row {
+        gap: 15px;
+        margin: 10px 5px;
+        padding: 10px 5px;
+      }
+      .image-column {
+        flex: 0 0 48%;
+        height: 180px;
+        margin: 0 auto;
+      }
+      .image-column:nth-child(3) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-row">
+    <div class="image-column">
+      <a href="https://hydrology.cl/" target="_blank" rel="noopener noreferrer">
+        <img src="https://i.imgur.com/UcOSx22.png" alt="Hydrology" />
+      </a>
+    </div>
+    <div class="image-column">
+      <a href="https://usm.cl/" target="_blank" rel="noopener noreferrer">
+        <img src="https://i.imgur.com/OjJF5yT.png" alt="USM" />
+      </a>
+    </div>
+    <div class="image-column">
+      <a href="https://obrasciviles.usm.cl/" target="_blank" rel="noopener noreferrer">
+        <img src="https://i.imgur.com/94MHjNo.png" alt="Obras Civiles USM" />
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
