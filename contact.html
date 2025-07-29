@@ -46,7 +46,7 @@
 
     .app-title {
       text-align: center;
-      color: var(--accent-color);
+      color: #00A3A9;
       font-size: 28px;
       font-weight: 900;
       margin-bottom: 10px;
@@ -58,7 +58,7 @@
       display: block;
       width: 25px;
       height: 4px;
-      background: var(--accent-color);
+      background: #00A3A9;
       margin: 5px auto 0;
     }
 
@@ -77,16 +77,20 @@
       margin-bottom: 10px;
     }
 
-    .app-form-control {
+    /* Aplica estilo uniforme a input y textarea */
+    input.app-form-control,
+    textarea.app-form-control {
       width: 100%;
       padding: 10px;
       border: none;
       border-bottom: 1px solid var(--border-color);
-      background: none;
-      color: var(--text-color);
+      background-color: var(--input-bg);
+      color: var(--input-text);
       font-size: 0.95rem;
+      font-family: 'Poppins', sans-serif;
       outline: none;
       resize: vertical;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .app-form-control::placeholder {
@@ -94,13 +98,13 @@
     }
 
     .app-form-control:focus {
-      border-bottom-color: var(--accent-color);
+      border-bottom-color: #00A3A9;
     }
 
     .app-form-button {
       background: none;
       border: none;
-      color: var(--accent-color);
+      color: #00A3A9;
       font-size: 14px;
       cursor: pointer;
       padding: 8px 16px;
@@ -126,19 +130,21 @@
 
     /* Tema claro por defecto */
     :root {
-      --accent-color: #00A3A9;
       --text-color: #3B3B3B;
       --border-color: #ADADAD;
       --placeholder-color: #999;
+      --input-bg: transparent;
+      --input-text: #3B3B3B;
     }
 
-    /* Tema oscuro automático */
+    /* Tema oscuro */
     @media (prefers-color-scheme: dark) {
       :root {
-        --accent-color: #00A3A9;
         --text-color: #ffffff;
-        --border-color: #888;
+        --border-color: #999;
         --placeholder-color: #bbb;
+        --input-bg: transparent;
+        --input-text: #ffffff;
       }
 
       .screen {
@@ -174,5 +180,3 @@
   </div>
 </body>
 </html>
-
-
