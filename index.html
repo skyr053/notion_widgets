@@ -82,6 +82,8 @@
     /* Igual comportamiento para móviles (<600px) */
     @media (max-width: 600px) {
       .image-row {
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 15px;
         margin: 10px 5px;
         padding: 10px 5px;
@@ -94,6 +96,7 @@
         margin: 0;
       }
 
+      /* Centrar la tercera imagen en segunda fila */
       .image-column:nth-child(3) {
         margin-left: auto;
         margin-right: auto;
