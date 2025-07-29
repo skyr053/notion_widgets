@@ -149,8 +149,11 @@
         </p>
       </div>
 
-      <!-- ✅ Formulario que envía a tu correo con Formspree -->
-      <form action="https://formspree.io/f/xblkynly" method="POST" class="app-form">
+      <!-- Formulario personalizado -->
+      <form id="contactForm" class="app-form">
+        <div class="app-form-group">
+          <input class="app-form-control" placeholder="NOMBRE" type="text" name="name" required>
+        </div>
         <div class="app-form-group">
           <input class="app-form-control" placeholder="EMAIL" type="email" name="email" required>
         </div>
@@ -161,8 +164,30 @@
           <button class="app-form-button" type="submit">ENVIAR</button>
         </div>
       </form>
-
     </div>
   </div>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault(); // Evita recargar la página
+
+      const formData = new FormData(form);
+      try {
+        await fetch('https://formspree.io/f/xblkynly', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        // Borra los campos del formulario
+        form.reset();
+      } catch (error) {
+        console.error('Error al enviar el formulario:', error);
+      }
+    });
+  </script>
 </body>
 </html>
