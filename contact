@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería Responsiva</title>
+  <style>
+    .image-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Permite que las imágenes bajen de línea */
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .image-column {
+      flex: 1 1 150px; /* Mínimo 150px, se expande según el espacio */
+      max-width: 200px; /* Para que no se vean demasiado grandes */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-column img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px; /* Opcional: bordes redondeados */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Opcional: sombra ligera */
+    }
+
+    @media (max-width: 600px) {
+      .image-column {
+        flex: 1 1 100%; /* Una imagen por fila en celulares pequeños */
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-row">
+    <div class="image-column">
+      <img src="imagen1.jpg" alt="Imagen 1">
+    </div>
+    <div class="image-column">
+      <img src="imagen2.jpg" alt="Imagen 2">
+    </div>
+    <div class="image-column">
+      <img src="imagen3.jpg" alt="Imagen 3">
+    </div>
+    <!-- Puedes agregar más imágenes aquí -->
+  </div>
+
+</body>
+</html>
