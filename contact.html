@@ -13,9 +13,7 @@
       padding: 0;
       height: 100%;
       overflow: hidden;
-      background: transparent;
       font-family: 'Poppins', sans-serif;
-      color: var(--text-color);
     }
 
     :root {
@@ -27,15 +25,13 @@
       --screen-bg: transparent;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --text-color: #68FC69;
-        --border-color: #FA2F68;
-        --placeholder-color: #FFEB51;
-        --input-bg: transparent;
-        --input-text: #68F8FC;
-        --screen-bg: transparent;
-      }
+    body.dark-mode {
+      --text-color: #68FC69;
+      --border-color: #FA2F68;
+      --placeholder-color: #FFEB51;
+      --input-bg: transparent;
+      --input-text: #68F8FC;
+      --screen-bg: transparent;
     }
 
     .screen {
@@ -162,7 +158,6 @@
         </p>
       </div>
 
-      <!-- Formulario personalizado -->
       <form id="contactForm" class="app-form">
         <div class="app-form-group">
           <input class="app-form-control" placeholder="NOMBRE" type="text" name="name" required>
@@ -181,9 +176,14 @@
   </div>
 
   <script>
+    // Detecta si el usuario prefiere modo oscuro y aplica clase al body
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add('dark-mode');
+    }
+
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', async function (e) {
-      e.preventDefault(); // Evita recargar la página
+      e.preventDefault();
 
       const formData = new FormData(form);
       try {
@@ -195,7 +195,6 @@
           body: formData
         });
 
-        // Borra los campos del formulario
         form.reset();
       } catch (error) {
         console.error('Error al enviar el formulario:', error);
