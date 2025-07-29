@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Widget de logos</title>
   <style>
     .image-row {
       display: flex;
-      justify-content: center; /* Centra horizontalmente */
-      gap: 5px; /* Espacio entre columnas */
-      flex-wrap: nowrap; /* Mantiene las imágenes en una fila */
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: nowrap; /* Una fila en PC */
+      margin: 20px 0;
+      overflow-x: visible; /* Sin scroll horizontal */
+      padding: 10px 0;
     }
 
     .image-column {
-      flex: 1 1 0; /* Las columnas se encogen y crecen para ajustarse */
-      height: 250px; /* altura fija */
-      max-width: 300px; /* Limita el tamaño máximo */
+      flex: 0 0 auto;
+      height: 250px;
+      max-width: 350px;
+      width: 250px; /* fijo para controlar */
     }
 
     .image-column img {
       width: 100%;
-      height: auto;
+      height: 100%;
       display: block;
-      object-fit: contain; /* Ajusta la imagen sin recortarla */
+      object-fit: contain;
       transition: transform 0.3s ease;
     }
 
     .image-column img:hover {
-      transform: scale(1.05); /* Pequeño zoom al pasar el mouse */
+      transform: scale(1.05);
     }
 
+    /* Móvil: 2 filas, 2 imágenes arriba y 1 abajo centrada */
     @media (max-width: 600px) {
+      .image-row {
+        flex-wrap: wrap; /* Permite varias filas */
+        overflow-x: visible; /* No scroll horizontal */
+      }
       .image-column {
         height: 180px;
-        min-width: 180px;
-        max-width: 200px;
+        max-width: 48%;
+        width: 48%;
+      }
+      /* Última imagen ocupa toda la fila y centrada */
+      .image-column:last-child {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -41,17 +58,17 @@
   <div class="image-row">
     <div class="image-column">
       <a href="https://hydrology.cl/" target="_blank">
-        <img src="https://i.imgur.com/UcOSx22.png" alt="Hydrology">
+        <img src="https://i.imgur.com/UcOSx22.png" alt="Hydrology" />
       </a>
     </div>
     <div class="image-column">
       <a href="https://usm.cl/" target="_blank">
-        <img src="https://i.imgur.com/OjJF5yT.png" alt="USM">
+        <img src="https://i.imgur.com/OjJF5yT.png" alt="USM" />
       </a>
     </div>
     <div class="image-column">
       <a href="https://obrasciviles.usm.cl/" target="_blank">
-        <img src="https://i.imgur.com/94MHjNo.png" alt="Obras Civiles USM">
+        <img src="https://i.imgur.com/94MHjNo.png" alt="Obras Civiles USM" />
       </a>
     </div>
   </div>
