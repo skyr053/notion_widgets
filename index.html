@@ -82,27 +82,31 @@
     /* Igual comportamiento para móviles (<600px) */
     @media (max-width: 600px) {
       .image-row {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        margin: 10px 5px;
-        padding: 10px 5px;
-      }
+    display: flex !important;       /* fuerza display flex */
+    flex-wrap: wrap !important;     /* permitir varias filas */
+    justify-content: center !important;
+    gap: 15px !important;
+    margin: 10px 5px !important;
+    padding: 10px 5px !important;
+    overflow-x: hidden !important;
+  }
 
-      .image-column {
-        flex: 0 1 48%;
-        max-width: 48%;
-        height: 180px;
-        margin: 0;
-      }
+  .image-column {
+    flex: 0 0 48% !important;       /* ancho fijo 48% sin crecer ni encoger */
+    max-width: 48% !important;
+    height: 180px !important;
+    margin: 0 !important;
+    display: flex !important;       /* importante para centrar imagen */
+    justify-content: center !important;
+    align-items: center !important;
+  }
 
-      /* Centrar la tercera imagen en segunda fila */
-      .image-column:nth-child(3) {
-        margin-left: auto;
-        margin-right: auto;
-        flex-basis: 48%;
-        max-width: 48%;
-      }
+  .image-column:nth-child(3) {
+    flex-basis: 48% !important;
+    max-width: 48% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
     }
   </style>
 </head>
