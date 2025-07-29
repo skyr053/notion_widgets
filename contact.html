@@ -11,33 +11,33 @@
       overflow-x: hidden; /* Oculta scrollbar horizontal si hay overflow */
     }
 
+    .container {
+      max-width: 700px;
+      width: 100%;
+      margin: 40px auto;
+      padding: 10px;
+      box-sizing: border-box; /* importante para que padding no aumente ancho */
+    }
+
     .screen {
       border: 1.5px solid #D1CDCD;
       border-radius: 15px;
       padding: 20px;
       box-sizing: border-box;
-}
+      position: relative;
+      overflow: hidden;
+      background: #222; /* para que el texto blanco se vea bien */
+    }
 
     body, button, input {
       letter-spacing: 1.4px;
     }
 
-    .container {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 10px;
-    }
-
-    .screen {
-      position: relative;
-      border-radius: 15px;
-      overflow: hidden;
-    }
-
     .screen-body {
       display: flex;
       flex-direction: column;
-      padding: 40px;
+      padding: 40px 20px 40px 20px;
+      box-sizing: border-box;
     }
 
     .screen-body-item {
@@ -51,7 +51,9 @@
 
     .logo-img {
       width: 300px;
+      max-width: 100%; /* para que no se salga en pantallas chicas */
       height: auto;
+      display: inline-block;
     }
 
     .app-title {
@@ -82,9 +84,10 @@
 
     .normal-text {
       font-family: 'Poppins', sans-serif;
-      color: #000;
+      color: #ddd; /* mejor contraste con fondo oscuro */
       line-height: 1.5;
-      font-size: 0.9rem;
+      font-size: 0.95rem; /* un poco más chica */
+      margin: 0;
     }
 
     .app-form-group {
@@ -110,14 +113,14 @@
       text-transform: uppercase;
       outline: none;
       transition: border-color .2s;
-      resize: none;      /* que el usuario pueda cambiar alto */
+      resize: none;      /* que el usuario no pueda cambiar alto */
       font-family: inherit;
       box-sizing: border-box;
       min-height: 100px;     /* altura mínima */
     }
 
     .app-form-control::placeholder {
-      color: #ddd;
+      color: #bbb;
     }
 
     .app-form-control:focus {
@@ -131,6 +134,7 @@
       font-size: 14px;
       cursor: pointer;
       outline: none;
+      padding: 8px 16px;
     }
 
     .app-form-button:hover {
@@ -139,15 +143,15 @@
 
     @media screen and (max-width: 520px) {
       .screen-body {
-        padding: 20px;
+        padding: 20px 10px;
       }
 
       .app-title {
-        font-size: 36px;
+        font-size: 32px !important;
       }
 
       .app-description p.normal-text {
-        font-size: 1rem; /* antes 1.2rem, ahora más pequeña */
+        font-size: 0.85rem; /* más pequeña */
       }
 
       .logo-img {
@@ -182,13 +186,13 @@
             <!-- FORMULARIO -->
             <div class="app-form">
               <div class="app-form-group">
-                <input class="app-form-control" placeholder="EMAIL">
+                <input class="app-form-control" placeholder="EMAIL" type="email">
               </div>
               <div class="app-form-group message">
                 <textarea class="app-form-control" placeholder="MENSAJE" rows="6"></textarea>
               </div>
               <div class="app-form-group buttons">
-                <button class="app-form-button">ENVIAR</button>
+                <button class="app-form-button" type="submit">ENVIAR</button>
               </div>
             </div>
           </div>
@@ -198,3 +202,4 @@
   </div> <!-- background -->
 </body>
 </html>
+
