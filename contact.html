@@ -15,6 +15,7 @@
       overflow: hidden;
       background: transparent;
       font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
     }
 
     :root {
@@ -23,17 +24,28 @@
       --placeholder-color: #999;
       --input-bg: transparent;
       --input-text: #3B3B3B;
+      --screen-bg: transparent;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-color: #68FC69;
+        --border-color: #FA2F68;
+        --placeholder-color: #FFEB51;
+        --input-bg: transparent;
+        --input-text: #68F8FC;
+        --screen-bg: transparent;
+      }
     }
 
     .screen {
+      background-color: var(--screen-bg);
+      color: var(--text-color);
       border: 1.5px solid var(--border-color);
       border-radius: 15px;
       padding: 20px;
       max-width: 500px;
       margin: auto;
-      background: transparent;
-      color: var(--text-color);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 
     .screen-body {
@@ -135,6 +147,7 @@
       }
     }
   </style>
+  <title>Formulario de Contacto</title>
 </head>
 <body>
   <div class="screen">
