@@ -13,25 +13,20 @@
       padding: 0;
       height: 100%;
       overflow: hidden;
+      background: transparent;
       font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      
     }
 
     :root {
-      --text-color: #3B3B3B;
+      --text-color: #999;
       --border-color: #ADADAD;
       --placeholder-color: #999;
-      --input-bg: transparent;
-      --input-text: #3B3B3B;
+      --input-bg: #ffffff; /* campos en blanco */
+      --input-text: #999;
       --screen-bg: transparent;
-    }
-
-    body.dark-mode {
-      --text-color: #68FC69;
-      --border-color: #FA2F68;
-      --placeholder-color: #FFEB51;
-      --input-bg: transparent;
-      --input-text: #68F8FC;
-      --screen-bg: transparent;
+      
     }
 
     .screen {
@@ -158,6 +153,7 @@
         </p>
       </div>
 
+      <!-- Formulario personalizado -->
       <form id="contactForm" class="app-form">
         <div class="app-form-group">
           <input class="app-form-control" placeholder="NOMBRE" type="text" name="name" required>
@@ -176,14 +172,11 @@
   </div>
 
   <script>
-    // Detecta si el usuario prefiere modo oscuro y aplica clase al body
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.body.classList.add('dark-mode');
-    }
-
     const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
     form.addEventListener('submit', async function (e) {
-      e.preventDefault();
+      e.preventDefault(); // Evita recargar la página
 
       const formData = new FormData(form);
       try {
@@ -196,6 +189,10 @@
         });
 
         form.reset();
+        successMessage.classList.add('show');
+        setTimeout(() => {
+          successMessage.classList.remove('show');
+        }, 5000); // El mensaje desaparece después de 5 segundos
       } catch (error) {
         console.error('Error al enviar el formulario:', error);
       }
