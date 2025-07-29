@@ -12,20 +12,19 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden; /* Evita scroll vertical y horizontal */
+      overflow: hidden;
       background: transparent;
       font-family: 'Poppins', sans-serif;
-      color: #fff;
     }
 
     .screen {
-      border: 1.5px solid #D1CDCD;
+      border: 1.5px solid var(--border-color);
       border-radius: 15px;
       padding: 20px;
       max-width: 500px;
       margin: auto;
-      background: #fff;
-      color: #3B3B3B;
+      background: transparent;
+      color: var(--text-color);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 
@@ -47,7 +46,7 @@
 
     .app-title {
       text-align: center;
-      color: #00A3A9;
+      color: var(--accent-color);
       font-size: 28px;
       font-weight: 900;
       margin-bottom: 10px;
@@ -59,7 +58,7 @@
       display: block;
       width: 25px;
       height: 4px;
-      background: #00A3A9;
+      background: var(--accent-color);
       margin: 5px auto 0;
     }
 
@@ -69,7 +68,7 @@
 
     .normal-text {
       font-size: 0.75rem;
-      color: #3B3B3B;
+      color: var(--text-color);
       line-height: 1.5;
       margin: 0;
     }
@@ -82,26 +81,26 @@
       width: 100%;
       padding: 10px;
       border: none;
-      border-bottom: 1px solid #ADADAD;
+      border-bottom: 1px solid var(--border-color);
       background: none;
-      color: #3B3B3B;
+      color: var(--text-color);
       font-size: 0.95rem;
       outline: none;
       resize: vertical;
     }
 
     .app-form-control::placeholder {
-      color: #bbb;
+      color: var(--placeholder-color);
     }
 
     .app-form-control:focus {
-      border-bottom-color: #00A3A9;
+      border-bottom-color: var(--accent-color);
     }
 
     .app-form-button {
       background: none;
       border: none;
-      color: #00A3A9;
+      color: var(--accent-color);
       font-size: 14px;
       cursor: pointer;
       padding: 8px 16px;
@@ -122,6 +121,28 @@
 
       .normal-text {
         font-size: 0.7rem;
+      }
+    }
+
+    /* Tema claro por defecto */
+    :root {
+      --accent-color: #00A3A9;
+      --text-color: #3B3B3B;
+      --border-color: #ADADAD;
+      --placeholder-color: #999;
+    }
+
+    /* Tema oscuro automático */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --accent-color: #00A3A9;
+        --text-color: #ffffff;
+        --border-color: #888;
+        --placeholder-color: #bbb;
+      }
+
+      .screen {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
       }
     }
   </style>
@@ -153,4 +174,5 @@
   </div>
 </body>
 </html>
+
 
