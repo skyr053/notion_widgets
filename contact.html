@@ -8,6 +8,7 @@
     body {
       margin: 0;
       color: #fff;
+      overflow-x: hidden; /* Oculta scrollbar horizontal si hay overflow */
     }
 
     screen {
@@ -109,7 +110,7 @@
       text-transform: uppercase;
       outline: none;
       transition: border-color .2s;
-      resize: vertical;      /* que el usuario pueda cambiar alto */
+      resize: none;      /* que el usuario pueda cambiar alto */
       font-family: inherit;
       box-sizing: border-box;
       min-height: 100px;     /* altura mínima */
