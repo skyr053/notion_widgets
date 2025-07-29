@@ -10,6 +10,13 @@
       color: #fff;
     }
 
+    screen {
+      border: 1.5px solid #D1CDCD;
+      border-radius: 15px;
+      padding: 20px;
+      box-sizing: border-box;
+}
+
     body, button, input {
       letter-spacing: 1.4px;
     }
@@ -92,8 +99,8 @@
     }
 
     .app-form-control {
-      width: 100%;
-      padding: 10px 0;
+      width: 100%;           /* ancho completo del contenedor */
+      padding: 10px;
       background: none;
       border: none;
       border-bottom: 1px solid #666;
@@ -102,10 +109,14 @@
       text-transform: uppercase;
       outline: none;
       transition: border-color .2s;
+      resize: vertical;      /* que el usuario pueda cambiar alto */
+      font-family: inherit;
+      box-sizing: border-box;
+      min-height: 100px;     /* altura mínima */
     }
 
     .app-form-control::placeholder {
-      color: #666;
+      color: #ddd;
     }
 
     .app-form-control:focus {
@@ -173,7 +184,7 @@
                 <input class="app-form-control" placeholder="EMAIL">
               </div>
               <div class="app-form-group message">
-                <input class="app-form-control" placeholder="MENSAJE">
+                <textarea class="app-form-control" placeholder="MENSAJE" rows="6"></textarea>
               </div>
               <div class="app-form-group buttons">
                 <button class="app-form-button">ENVIAR</button>
