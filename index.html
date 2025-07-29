@@ -23,7 +23,7 @@
       display: flex;
       justify-content: center;
       gap: 20px;
-      flex-wrap: nowrap; /* una fila en PC */
+      flex-wrap: nowrap; /* fila única en PC grande */
       margin: 20px 10px;
       padding: 10px 0;
       max-width: 100vw;
@@ -31,77 +31,26 @@
     }
 
     .image-column {
-      flex: 1 1 300px; /* base 300px, crece si hay espacio */
-      max-width: 300px;
+      flex: 0 0 300px; /* tamaño fijo para que todas sean iguales */
       height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .image-column img {
       width: 100%;
       height: 100%;
-      display: block;
       object-fit: contain;
       transition: transform 0.3s ease;
+      display: block;
     }
 
     .image-column img:hover {
       transform: scale(1.05);
     }
 
-    /* Cuando la ventana es menor o igual a 900px */
+    /* Ventanas medianas: reordena 2 arriba, 1 abajo centrada */
     @media (max-width: 900px) {
       .image-row {
-        flex-wrap: wrap; /* permite que baje la tercera imagen */
-        justify-content: flex-start;
-        gap: 10px;
-        margin: 10px 5px;
-        padding: 10px 5px;
-      }
-      .image-column {
-        flex: 1 1 48%;
-        max-width: 48%;
-        height: 180px;
-        margin: 0;
-      }
-    }
-
-    /* Ajustes para móvil menor de 600px (igual que para 900px) */
-    @media (max-width: 600px) {
-      .image-row {
-        gap: 10px;
-        justify-content: flex-start;
-        margin: 10px 5px;
-        padding: 10px 5px;
-      }
-      .image-column {
-        flex: 1 1 48%;
-        max-width: 48%;
-        height: 180px;
-        margin: 0;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="image-row">
-    <div class="image-column">
-      <a href="https://hydrology.cl/" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.imgur.com/UcOSx22.png" alt="Hydrology" />
-      </a>
-    </div>
-    <div class="image-column">
-      <a href="https://usm.cl/" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.imgur.com/OjJF5yT.png" alt="USM" />
-      </a>
-    </div>
-    <div class="image-column">
-      <a href="https://obrasciviles.usm.cl/" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.imgur.com/94MHjNo.png" alt="Obras Civiles USM" />
-      </a>
-    </div>
-  </div>
-
-</body>
-</html>
-
+        flex-wrap: wrap; /* permite que baje la tercera imagen *
