@@ -81,9 +81,8 @@
 
     /* Igual comportamiento para móviles (<600px) */
     @media (max-width: 600px) {
-      .image-row {
-    display: flex !important;       /* fuerza display flex */
-    flex-wrap: wrap !important;     /* permitir varias filas */
+  .image-row {
+    flex-wrap: wrap !important;
     justify-content: center !important;
     gap: 15px !important;
     margin: 10px 5px !important;
@@ -92,22 +91,23 @@
   }
 
   .image-column {
-    flex: 0 0 48% !important;       /* ancho fijo 48% sin crecer ni encoger */
+    flex: 0 0 48% !important;
     max-width: 48% !important;
     height: 180px !important;
     margin: 0 !important;
-    display: flex !important;       /* importante para centrar imagen */
+    display: flex !important;
     justify-content: center !important;
     align-items: center !important;
   }
 
   .image-column:nth-child(3) {
-    flex-basis: 48% !important;
+    flex: 0 0 48% !important;
     max-width: 48% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    order: 3 !important;
   }
-    }
+}
   </style>
 </head>
 <body>
