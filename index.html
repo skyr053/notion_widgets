@@ -1,44 +1,55 @@
-<div class="image-row">
-  <div class="image-column">
-    <a href="https://hydrology.cl/" target="_blank">
-      <img src="https://i.imgur.com/UcOSx22.png" alt="Imagen 1">
-    </a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Logos USM e Hydrology</title>
+  <style>
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: nowrap;
+      margin: 20px 0;
+    }
+
+    .image-column {
+      flex: 1 1 0;
+      height: 150px;
+      max-width: 300px;
+    }
+
+    .image-column img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .image-column img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-row">
+    <div class="image-column">
+      <a href="https://hydrology.cl/" target="_blank">
+        <img src="https://i.imgur.com/UcOSx22.png" alt="Hydrology">
+      </a>
+    </div>
+    <div class="image-column">
+      <a href="https://usm.cl/" target="_blank">
+        <img src="https://i.imgur.com/OjJF5yT.png" alt="USM">
+      </a>
+    </div>
+    <div class="image-column">
+      <a href="https://obrasciviles.usm.cl/" target="_blank">
+        <img src="https://i.imgur.com/94MHjNo.png" alt="Obras Civiles USM">
+      </a>
+    </div>
   </div>
-  <div class="image-column">
-    <a href="https://usm.cl/" target="_blank">
-      <img src="https://i.imgur.com/OjJF5yT.png" alt="Imagen 2">
-    </a>
-  </div>
-  <div class="image-column">
-    <a href="https://obrasciviles.usm.cl/" target="_blank">
-      <img src="https://i.imgur.com/94MHjNo.png" alt="Imagen 3">
-    </a>
-  </div>
-</div>
 
-.image-row {
-  display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  gap: 20px; /* Espacio entre columnas */
-  flex-wrap: nowrap; /* Mantiene las imágenes en una fila */
-  margin: 20px 0;
-}
-
-.image-column {
-  flex: 1 1 0; /* Las columnas se encogen y crecen para ajustarse */
-  height: 150px;       /* altura fija */
-  max-width: 300px; /* Limita el tamaño máximo */
-  
-}
-
-.image-column img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain; /* Ajusta la imagen sin recortarla */
-  transition: transform 0.3s ease;
-}
-
-.image-column img:hover {
-  transform: scale(1.05); /* Pequeño zoom al pasar el mouse */
-}
+</body>
+</html>
