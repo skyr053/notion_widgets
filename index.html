@@ -4,41 +4,41 @@
   <meta charset="UTF-8" />
   <title>Widget de logos</title>
   <style>
-    /* Box sizing global */
+    /* Reset box-sizing */
     *, *::before, *::after {
       box-sizing: border-box;
     }
 
-    /* Body sin scroll horizontal ni vertical */
     html, body {
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
-      overflow-y: hidden;
-      width: 100vw;
-      height: 100vh;
+      overflow-x: hidden;  /* no scroll horizontal */
+      height: 100%;
+      font-family: Arial, sans-serif;
     }
 
-    /* Contenedor principal */
+    body {
+      overflow-y: hidden;  /* evitar scroll vertical */
+    }
+
     .image-row {
       display: flex;
       justify-content: center;
       gap: 20px;
-      flex-wrap: nowrap; /* fila única en PC grande */
-      margin: 10px; /* reduce margen para evitar overflow */
+      flex-wrap: nowrap;
+      margin: 10px;
       padding: 10px 0;
-      max-width: calc(100vw - 20px); /* margen incluido */
+      max-width: 100vw;
       overflow-x: hidden;
     }
 
     .image-column {
-      flex: 1 1 0;
-      max-width: 300px; /* máximo tamaño por imagen */
+      flex: 0 1 300px;  /* base fija para ancho, flex-grow 0, flex-shrink 1 */
       height: 250px;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-width: 0; /* importante para evitar overflow en flex */
+      min-width: 0;  /* evita overflow */
     }
 
     .image-column img {
@@ -53,48 +53,52 @@
       transform: scale(1.05);
     }
 
-    /* Ventanas medianas: reordena 2 arriba, 1 abajo centrada */
+    /* Cuando ventana menor a 900px */
     @media (max-width: 900px) {
       .image-row {
-        flex-wrap: wrap; /* permite que baje la tercera imagen */
-        justify-content: center; /* centramos todo */
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 15px;
         margin: 10px 5px;
         padding: 10px 5px;
-        max-width: calc(100vw - 10px);
       }
+
       .image-column {
-        flex: 1 1 48%;  /* ancho igual para todas */
+        flex: 0 1 48%;
         max-width: 48%;
         height: 180px;
-        margin: 0 auto;
-        min-width: 0;
+        margin: 0;
       }
-      /* Para que la tercera imagen esté centrada en la segunda fila */
+
+      /* Centrar la tercera imagen en segunda fila */
       .image-column:nth-child(3) {
         margin-left: auto;
         margin-right: auto;
+        flex-basis: 48%;
+        max-width: 48%;
       }
     }
 
-    /* Móvil (igual que ventana mediana) */
+    /* Igual comportamiento para móviles (<600px) */
     @media (max-width: 600px) {
       .image-row {
         gap: 15px;
         margin: 10px 5px;
         padding: 10px 5px;
-        max-width: calc(100vw - 10px);
       }
+
       .image-column {
-        flex: 1 1 48%;
+        flex: 0 1 48%;
         max-width: 48%;
         height: 180px;
-        margin: 0 auto;
-        min-width: 0;
+        margin: 0;
       }
+
       .image-column:nth-child(3) {
         margin-left: auto;
         margin-right: auto;
+        flex-basis: 48%;
+        max-width: 48%;
       }
     }
   </style>
@@ -121,4 +125,3 @@
 
 </body>
 </html>
-
