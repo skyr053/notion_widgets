@@ -7,18 +7,18 @@
     .image-row {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 20px;
       flex-wrap: nowrap; /* Una fila en PC */
       margin: 20px 0;
-      overflow-x: visible; /* Sin scroll horizontal */
+      overflow-x: visible; /* No scroll horizontal */
       padding: 10px 0;
     }
 
     .image-column {
       flex: 0 0 auto;
       height: 250px;
-      max-width: 350px;
-      width: 250px; /* fijo para controlar */
+      width: 300px; /* tamaño fijo para PC */
+      max-width: 100%;
     }
 
     .image-column img {
@@ -33,20 +33,17 @@
       transform: scale(1.05);
     }
 
-    /* Móvil: 2 filas, 2 imágenes arriba y 1 abajo centrada */
+    /* En móviles */
     @media (max-width: 600px) {
       .image-row {
-        flex-wrap: wrap; /* Permite varias filas */
-        overflow-x: visible; /* No scroll horizontal */
+        flex-wrap: wrap; /* Permite múltiples filas */
       }
       .image-column {
         height: 180px;
-        max-width: 48%;
-        width: 48%;
+        width: 48%; /* dos imágenes por fila */
       }
-      /* Última imagen ocupa toda la fila y centrada */
+      /* La última imagen ocupa toda la fila y está centrada */
       .image-column:last-child {
-        max-width: 100%;
         width: 100%;
         margin: 0 auto;
       }
@@ -75,3 +72,4 @@
 
 </body>
 </html>
+
