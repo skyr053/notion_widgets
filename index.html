@@ -7,14 +7,13 @@
     .image-row {
       display: flex;
       justify-content: center; /* Centra horizontalmente */
-      gap: 20px; /* Espacio entre columnas */
+      gap: 5px; /* Espacio entre columnas */
       flex-wrap: nowrap; /* Mantiene las imágenes en una fila */
-      margin: 20px 0;
     }
 
     .image-column {
       flex: 1 1 0; /* Las columnas se encogen y crecen para ajustarse */
-      height: 150px; /* altura fija */
+      height: 250px; /* altura fija */
       max-width: 300px; /* Limita el tamaño máximo */
     }
 
@@ -29,6 +28,12 @@
     .image-column img:hover {
       transform: scale(1.05); /* Pequeño zoom al pasar el mouse */
     }
+
+    @media (max-width: 600px) {
+      .image-column {
+        height: 180px;
+        min-width: 180px;
+        max-width: 200px;
   </style>
 </head>
 <body>
