@@ -17,6 +17,24 @@
       font-family: 'Poppins', sans-serif;
     }
 
+    :root {
+      --text-color: #3B3B3B;
+      --border-color: #ADADAD;
+      --placeholder-color: #999;
+      --input-bg: transparent;
+      --input-text: #3B3B3B;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-color: #68FC69;
+        --border-color: #FA2F68;
+        --placeholder-color: #FFEB51;
+        --input-bg: transparent;
+        --input-text: #68F8FC;
+      }
+    }
+
     .screen {
       border: 1.5px solid var(--border-color);
       border-radius: 15px;
@@ -77,7 +95,6 @@
       margin-bottom: 10px;
     }
 
-    /* Aplica estilo uniforme a input y textarea */
     input.app-form-control,
     textarea.app-form-control {
       width: 100%;
@@ -90,7 +107,7 @@
       font-family: 'Poppins', sans-serif;
       outline: none;
       resize: vertical;
-      transition: background-color 0.3s, color 0.3s;
+      transition: border-bottom-color 0.3s, color 0.3s;
     }
 
     .app-form-control::placeholder {
@@ -127,30 +144,6 @@
         font-size: 0.7rem;
       }
     }
-
-    /* Tema claro por defecto */
-    :root {
-      --text-color: #3B3B3B;
-      --border-color: #ADADAD;
-      --placeholder-color: #999;
-      --input-bg: transparent;
-      --input-text: #3B3B3B;
-    }
-
-    /* Tema oscuro */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --text-color: #68FC69;
-        --border-color: #FA2F68;
-        --placeholder-color: #FFEB51;
-        --input-bg: transparent;
-        --input-text: #68F8FC;
-      }
-
-      .screen {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
-      }
-    }
   </style>
 </head>
 <body>
@@ -173,10 +166,4 @@
           <textarea class="app-form-control" placeholder="MENSAJE" rows="3"></textarea>
         </div>
         <div class="app-form-group buttons" style="text-align: right;">
-          <button class="app-form-button" type="submit">ENVIAR</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+          <button class="app-form-button" type="submi
