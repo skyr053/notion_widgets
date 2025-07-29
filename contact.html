@@ -28,8 +28,9 @@
       overflow: hidden;
     }
 
-    body, button, input {
+    body, button, input, textarea {
       letter-spacing: 1.4px;
+      font-family: 'Poppins', sans-serif;
     }
 
     .screen-body {
@@ -83,7 +84,7 @@
 
     .normal-text {
       font-family: 'Poppins', sans-serif;
-      color: #ddd; /* mejor contraste con fondo oscuro */
+      color: #666; /* mejor contraste con fondo oscuro */
       line-height: 1.5;
       font-size: 0.95rem; /* un poco más chica */
       margin: 0;
@@ -101,21 +102,23 @@
       text-align: right;
     }
 
+    /* Ajuste de campos para tamaño y estilo similar al texto descriptivo */
     .app-form-control {
-      width: 100%;           /* ancho completo del contenedor */
-      padding: 10px;
+      width: 100%;
+      padding: 8px 10px;
       background: none;
       border: none;
-      border-bottom: 1px solid #666;
-      color: #ddd;
-      font-size: 14px;
-      text-transform: uppercase;
+      border-bottom: 1px solid #ddd;
+      color: #666;
+      font-size: 0.95rem;
+      text-transform: none;
       outline: none;
       transition: border-color .2s;
-      resize: none;      /* que el usuario no pueda cambiar alto */
+      resize: vertical;
       font-family: inherit;
       box-sizing: border-box;
-      min-height: 100px;     /* altura mínima */
+      min-height: 40px;
+      line-height: 1.3;
     }
 
     .app-form-control::placeholder {
@@ -124,6 +127,11 @@
 
     .app-form-control:focus {
       border-bottom-color: #00A3A9;
+    }
+
+    .app-form-group.message textarea.app-form-control {
+      min-height: 80px;
+      font-size: 0.95rem;
     }
 
     .app-form-button {
