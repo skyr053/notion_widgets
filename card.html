@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grupo de Hidrología UTFSM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f1f1f1;
+      margin: 2rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .blog-card {
+      display: flex;
+      flex-direction: column;
+      max-width: 1100px;
+      margin: 1.5rem auto;
+      box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .meta {
+      position: relative;
+      height: 200px;
+    }
+
+    .photo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .description {
+      padding: 1rem;
+      background: #fff;
+      position: relative;
+    }
+
+    .description h1 {
+      font-size: 1.7rem;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .description h2 {
+      font-size: 1rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: #a2a2a2;
+      margin-top: 5px;
+    }
+
+    .description p {
+      margin: 1rem 0 0;
+      color: #555;
+      font-size: 13px;
+      position: relative;
+    }
+
+    .description p:first-of-type:before {
+      content: "";
+      position: absolute;
+      height: 3px;
+      background: #00A3AA;
+      width: 75px;
+      top: -1rem;
+      border-radius: 3px;
+    }
+
+    @media (min-width: 640px) {
+      .blog-card {
+        flex-direction: row;
+      }
+
+      .meta {
+        flex-basis: 40%;
+        height: auto;
+      }
+
+      .description {
+        flex-basis: 60%;
+      }
+
+      .description:before {
+        content: "";
+        background: #fff;
+        width: 30px;
+        position: absolute;
+        left: -10px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        transform: skewX(-3deg);
+      }
+
+      .blog-card.alt {
+        flex-direction: row-reverse;
+      }
+
+      .blog-card.alt .description:before {
+        left: inherit;
+        right: -10px;
+        transform: skewX(3deg);
+      }
+
+      .description p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blog-card">
+    <div class="meta">
+      <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1478827217976-7214a0556393?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+    </div>
+    <div class="description">
+      <h1>Ciencia y Tecnología al Servicio de la Gestión Hidrológica</h1>
+      <h2>Comprometidos con el conocimiento</h2>
+      <p>En el Grupo de Hidrología UTFSM, trabajamos para expandir las fronteras del conocimiento en la gestión y dinámica de los recursos hídricos. A través de investigaciones rigurosas y colaborativas, abordamos problemas complejos como el cambio climático, la escasez hídrica y la sostenibilidad en sistemas hídricos. Nuestro objetivo es generar herramientas y conceptos innovadores que sirvan tanto a la comunidad académica como a la sociedad en general.</p>
+    </div>
+  </div>
+
+  <div class="blog-card alt">
+    <div class="meta">
+      <div class="photo" style="background-image: url('https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg');"></div>
+    </div>
+    <div class="description">
+      <h1>Investigación Aplicada en Terreno</h1>
+      <h2>Conectando teoría y práctica</h2>
+      <p>Realizamos campañas de medición y monitoreo hidrológico en distintas zonas del país, evaluando el comportamiento de las cuencas en escenarios extremos. La integración de datos observacionales con modelos numéricos nos permite comprender mejor los desafíos hídricos actuales y proponer soluciones efectivas y basadas en evidencia.</p>
+    </div>
+  </div>
+
+</body>
+</html>
