@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grupo de Hidrología UTFSM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset y box-sizing */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 2rem;
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* --- Blog Card --- */
+    .blog-card {
+      display: flex;
+      flex-direction: column;
+      max-width: 1100px;
+      margin: 1.5rem auto;
+      box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .meta {
+      position: relative;
+      height: 200px;
+    }
+
+    .photo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .description {
+      padding: 1rem;
+      background: #fff;
+      position: relative;
+    }
+
+    .description h1 {
+      font-size: 1.7rem;
+      line-height: 1.3;
+      margin: 0;
+      font-style: italic;
+    }
+
+    .description h2 {
+      font-size: 1rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: #a2a2a2;
+      margin-top: 5px;
+    }
+
+    .description p {
+      margin: 1rem 0 0;
+      color: #555;
+      font-size: 13px;
+      position: relative;
+    }
+
+    .description p:first-of-type:before {
+      content: "";
+      position: absolute;
+      height: 3px;
+      background: #00A3AA;
+      width: 75px;
+      top: -1rem;
+      border-radius: 3px;
+    }
+
+    @media (min-width: 640px) {
+      .blog-card {
+        flex-direction: row;
+      }
+
+      .meta {
+        flex-basis: 40%;
+        height: auto;
+      }
+
+      .description {
+        flex-basis: 60%;
+      }
+
+      .description:before {
+        content: "";
+        background: #fff;
+        width: 30px;
+        position: absolute;
+        left: -10px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        transform: skewX(-3deg);
+      }
+
+      .description p {
+        font-size: 16px;
+      }
+    }
+
+    /* --- Widget de logos --- */
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: nowrap;
+      margin: 40px auto 10px; /* separacion del blog card */
+      padding: 10px 0;
+      max-width: 1100px;
+      overflow-x: hidden;
+    }
+
+    .image-column {
+      flex: 0 1 300px;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .image-column img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+
+    .image-column img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Responsive logos */
+    @media (max-width: 900px) {
+      .image-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 30px 5px 10px;
+        padding: 10px 5px;
+      }
+
+      .image-column {
+        flex: 0 1 48%;
+        max-width: 48%;
+        height: 180px;
+        margin: 0;
+      }
+
+      .image-column:nth-child(3) {
+        margin-left: auto;
+        margin-right: auto;
+        flex-basis: 48%;
+        max-width: 48%;
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .image-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 30px 5px 10px;
+        padding: 10px 5px;
+        max-width: 100%;
+      }
+
+      .image-column {
+        flex: 0 0 45%;
+        max-width: 45%;
+        height: 140px;
+        margin: 0;
+      }
+
+      .image-column:nth-child(3) {
+        flex-basis: 45%;
+        max-width: 45%;
+        height: 140px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .image-column img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blog-card">
+    <div class="meta">
+      <div class="photo" style="background-image: url('https://images.unsplash.com/photo-1478827217976-7214a0556393?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+    </div>
+    <div class="description">
+      <h1>Ciencia y Tecnología al Servicio de la Gestión Hidrológica</h1>
+      <h2>Comprometidos con el conocimiento</h2>
+      <p>En el Grupo de Hidrología UTFSM, trabajamos para expandir las fronteras del conocimiento en la gestión y dinámica de los recursos hídricos. A través de investigaciones rigurosas y colaborativas, abordamos problemas complejos como el cambio climático, la escasez hídrica y la sostenibilidad en sistemas hídricos. Nuestro objetivo es generar herramientas y conceptos innovadores que sirvan tanto a la comunidad académica como a la sociedad en general.</p>
+    </div>
+  </div>
+
+  <div class="image-row">
+    <div class="image-column">
+      <a href="https://hydrology.cl/" target="_blank" rel="noopener noreferrer">
+        <img src="https://i.imgur.com/UcOSx22.png" alt="Hydrology" />
+      </a>
+    </div>
+    <div class="image-column">
+      <a href="https://usm.cl/" target="_blank" rel="noopener noreferrer">
+        <img src="https://i.imgur.com/OjJF5yT.png" alt="USM" />
+      </a>
+    </div>
+    <div class="image-column">
+      <a href="https://obrasciviles.usm.cl/" target="_blank" rel="noopener noreferrer">
+        <img src="https://i.imgur.com/94MHjNo.png" alt="Obras Civiles USM" />
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
